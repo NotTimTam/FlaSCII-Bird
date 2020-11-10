@@ -120,7 +120,7 @@ function killPlayer() {
 
 // Add pipes.
 function addPipe() {
-    pipeX = 17;
+    pipeX = 28;
     pipeHeight = Math.ceil(Math.random() * (14 - 5) + 5);
     console.log(pipeHeight);
 }
