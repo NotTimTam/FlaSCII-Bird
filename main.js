@@ -22,7 +22,7 @@ let startMenu = [
     [],
     [],
     ["___________________________"],
-    []
+    [`SCORE: ${score}`]
 ];
 
 // Update display
@@ -114,7 +114,8 @@ function gravity() {
 // Kill the player.
 function killPlayer() {
     window.location.reload();
-    alert("YOU DIED. SCORE: " + score);
+    updateDisplay(startMenu);
+    started = false;
 }
 
 // Add pipes.
