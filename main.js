@@ -3,6 +3,28 @@ let playerY = 5;
 let pipeX = 0;
 let pipeHeight = 0;
 
+let started = false;
+let startMenu = [
+    [""],
+    [""],
+    [],
+    [],
+    ["FlaSCII Bird"],
+    [],
+    [],
+    [">"],
+    ["           ^ That's you"],
+    [],
+    [],
+    ["Space to Start..."],
+    [],
+    [],
+    [],
+    [],
+    ["___________________________"],
+    []
+];
+
 // Update display
 function updateDisplay(data) {
     let display = document.getElementById("display");
@@ -111,17 +133,22 @@ function movePipe() {
 }
 
 function startGame() {
+    started = true;
+
     addPipe();
 
     window.setInterval(generateWorld, 10);
     window.setInterval(gravity, 200);
 }
 
-// IMPLEMENT START MENU
-startGame();
+updateDisplay(startMenu);
 
 document.body.onkeyup = function(e){ 
     if(e.keyCode == 32) { 
-        playerY -= 3;
+        if (started) {
+            playerY -= 3;
+        } else {
+            startGame();
+        }
     } 
 }
