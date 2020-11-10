@@ -1,0 +1,25 @@
+.disp {
+    color: darkgreen;
+    background-color: black;
+    width: 20em;
+    height: 20em;
+    font-size: 2em;
+    word-wrap: break-word;
+    padding: 60px;
+    border: 1px solid white;
+}
+
+.marg {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+html {
+    text-align: center;
+    background-color: black;
+    color: green;
+}
