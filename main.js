@@ -12,7 +12,7 @@ let startMenu = [
     ["FlaSCII Bird"],
     [],
     [],
-    [">"],
+    ["<span style='color: yellow; font-weight: bold;'>></span>"],
     ["           ^ That's you"],
     [],
     [],
@@ -22,7 +22,7 @@ let startMenu = [
     [],
     [],
     ["___________________________"],
-    [`SCORE: ${score}`]
+    [`<span style='color: white;'>SCORE: ${score}</span>`]
 ];
 
 // Update display
@@ -69,7 +69,7 @@ function generateWorld() {
             for (let column = 1; column <= 27; column++) {
                 if (column == 8) {
                     if (row == playerY) {
-                        rowIndecies.push(">");
+                        rowIndecies.push("<span style='color: yellow; font-weight: bold;'>></span>");
                     } else {
                         rowIndecies.push(" ");
                     }
@@ -97,14 +97,14 @@ function generateWorld() {
                 }
             }
         } else if (row > 17) {
-            let scoreName = ["S", "C", "O", "R", "E", ":", " "];
+            let scoreName = ["<span style='color: white;'>S</span>", "<span style='color: white;'>C</span>", "<span style='color: white;'>O</span>", "<span style='color: white;'>R</span>", "<span style='color: white;'>E</span>", "<span style='color: white;'>:</span>", " "];
             for (let i = 0; i < 7; i++) {
                 rowIndecies.push(scoreName[i]);
             }
             let scoreString = score.toString()
             scoreString = scoreString.split("");
             for (let i = 0; i < scoreString.length; i++) {
-                rowIndecies.push(scoreString[i]);
+                rowIndecies.push("<span style='color: white;'>" + scoreString[i] + "</span>");
             }
         }
         display.push(rowIndecies);
