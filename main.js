@@ -63,7 +63,7 @@ function generateWorld() {
         let rowIndecies = [];
         if (row == 17) {
             for (let column = 1; column <= 27; column++) {
-                rowIndecies.push("_");
+                rowIndecies.push("▓");
             }
         } else if (row < 17) {
             for (let column = 1; column <= 27; column++) {
