@@ -77,11 +77,19 @@ function generateWorld() {
                 if (column == pipeX || column == pipeX + 1) {
                     if (row >= pipeHeight || row <= pipeHeight - 4) {
                         if (row == pipeHeight) {
-                            rowIndecies.push("_");
+                            if (column != pipeX) {
+                                rowIndecies.push("╗");
+                            } else {
+                                rowIndecies.push("╔");
+                            }
                         } else if (row == pipeHeight - 4) {
-                            rowIndecies.push("-");
+                            if (column != pipeX) {
+                                rowIndecies.push("╝");
+                            } else {
+                                rowIndecies.push("╚");
+                            }
                         } else {
-                            rowIndecies.push("|");
+                            rowIndecies.push("║");
                         }
                     }
                 } else {
