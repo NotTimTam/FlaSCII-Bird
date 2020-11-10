@@ -153,3 +153,17 @@ document.body.onkeyup = function(e){
         }
     } 
 }
+
+var lastLoop = new Date();
+function gameLoop() { 
+    var thisLoop = new Date();
+    var fps = 200 / (thisLoop - lastLoop);
+    if (fps > 1000) {
+        fps = 60;
+    }
+    fps = Math.ceil(fps);
+    lastLoop = thisLoop;
+    document.getElementsByTagName("title")[0].innerHTML = "FlaSCII Bird | " + fps + "FPS";
+}
+
+window.setInterval(gameLoop, 10);
